@@ -1,3 +1,8 @@
+---
+tags:
+- sentence-transformers
+- feature-extraction
+---
 # LaBSE Pytorch Version 
 This is a pytorch port of the tensorflow version of [LaBSE](https://tfhub.dev/google/LaBSE/1).
 
