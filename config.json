@@ -1,4 +1,5 @@
 {
+  "_name_or_path": "old_models/LaBSE/0_Transformer",
   "architectures": [
     "BertModel"
   ],
@@ -21,6 +22,9 @@
   "pooler_num_fc_layers": 3,
   "pooler_size_per_head": 128,
   "pooler_type": "first_token_transform",
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.7.0",
   "type_vocab_size": 2,
+  "use_cache": true,
   "vocab_size": 501153
 }

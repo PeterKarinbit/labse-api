@@ -1,42 +1,77 @@
 ---
+pipeline_tag: sentence-similarity
 tags:
 - sentence-transformers
 - feature-extraction
+- sentence-similarity
+- transformers
+- transformers
+- transformers
+- transformers
+- transformers
+- transformers
+- transformers
+- transformers
 ---
-# LaBSE Pytorch Version 
-This is a pytorch port of the tensorflow version of [LaBSE](https://tfhub.dev/google/LaBSE/1).
 
-To get the sentence embeddings, you can  use the following code:
-```python
-from transformers import AutoTokenizer, AutoModel
+# sentence-transformers/LaBSE
 
-tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/LaBSE")
-model = AutoModel.from_pretrained("sentence-transformers/LaBSE")
+This is a [sentence-transformers](https://www.SBERT.net) model: It maps sentences & paragraphs to a 768 dimensional dense vector space and can be used for tasks like clustering or semantic search.
 
-sentences = ["Hello World", "Hallo Welt"]
 
-encoded_input = tokenizer(sentences, padding=True, truncation=True, max_length=64, return_tensors='pt')
 
-with torch.no_grad():
-    model_output = model(**encoded_input)
+## Usage (Sentence-Transformers)
 
-embeddings = model_output.pooler_output
-embeddings = torch.nn.functional.normalize(embeddings)
-print(embeddings)
+Using this model becomes easy when you have [sentence-transformers](https://www.SBERT.net) installed:
+
+```
+pip install -U sentence-transformers
 ```
 
+Then you can use the model like this:
 
-When you have [sentence-transformers](https://www.sbert.net/) installed, you can use the model like this:
 ```python
 from sentence_transformers import SentenceTransformer
-sentences = ["Hello World", "Hallo Welt"]
+sentences = ["This is an example sentence", "Each sentence is converted"]
 
-model = SentenceTransformer('LaBSE')
+model = SentenceTransformer('sentence-transformers/LaBSE')
 embeddings = model.encode(sentences)
 print(embeddings)
 ```
 
-## Reference:
-Fangxiaoyu Feng, Yinfei Yang, Daniel Cer, Narveen Ari, Wei Wang. [Language-agnostic BERT Sentence Embedding](https://arxiv.org/abs/2007.01852). July 2020
 
-License: [https://tfhub.dev/google/LaBSE/1](https://tfhub.dev/google/LaBSE/1)
+
+## Evaluation Results
+
+
+
+For an automated evaluation of this model, see the *Sentence Embeddings Benchmark*: [https://seb.sbert.net](https://seb.sbert.net?model_name=sentence-transformers/LaBSE)
+
+
+
+## Full Model Architecture
+```
+SentenceTransformer(
+  (0): Transformer({'max_seq_length': 256, 'do_lower_case': False}) with Transformer model: BertModel 
+  (1): Pooling({'word_embedding_dimension': 768, 'pooling_mode_cls_token': True, 'pooling_mode_mean_tokens': False, 'pooling_mode_max_tokens': False, 'pooling_mode_mean_sqrt_len_tokens': False})
+  (2): Dense({'in_features': 768, 'out_features': 768, 'bias': True, 'activation_function': 'torch.nn.modules.activation.Tanh'})
+  (3): Normalize()
+)
+```
+
+## Citing & Authors
+
+This model was trained by [sentence-transformers](https://www.sbert.net/). 
+        
+If you find this model helpful, feel free to cite our publication [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/abs/1908.10084):
+```bibtex 
+@inproceedings{reimers-2019-sentence-bert,
+    title = "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+    author = "Reimers, Nils and Gurevych, Iryna",
+    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
+    month = "11",
+    year = "2019",
+    publisher = "Association for Computational Linguistics",
+    url = "http://arxiv.org/abs/1908.10084",
+}
+```
