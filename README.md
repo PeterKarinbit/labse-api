@@ -5,19 +5,11 @@ tags:
 - feature-extraction
 - sentence-similarity
 - transformers
-- transformers
-- transformers
-- transformers
-- transformers
-- transformers
-- transformers
-- transformers
+license: apache-2.0
 ---
 
 # sentence-transformers/LaBSE
-
-This is a [sentence-transformers](https://www.SBERT.net) model: It maps sentences & paragraphs to a 768 dimensional dense vector space and can be used for tasks like clustering or semantic search.
-
+This is a port of the [LaBSE](https://tfhub.dev/google/LaBSE/1) model to PyTorch. It can be used to map 109 languages to a shared vector space.
 
 
 ## Usage (Sentence-Transformers)
