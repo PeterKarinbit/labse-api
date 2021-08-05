@@ -8,7 +8,7 @@ tags:
 license: apache-2.0
 ---
 
-# sentence-transformers/LaBSE
+# LaBSE
 This is a port of the [LaBSE](https://tfhub.dev/google/LaBSE/1) model to PyTorch. It can be used to map 109 languages to a shared vector space.
 
 
@@ -53,17 +53,5 @@ SentenceTransformer(
 
 ## Citing & Authors
 
-This model was trained by [sentence-transformers](https://www.sbert.net/). 
-        
-If you find this model helpful, feel free to cite our publication [Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks](https://arxiv.org/abs/1908.10084):
-```bibtex 
-@inproceedings{reimers-2019-sentence-bert,
-    title = "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
-    author = "Reimers, Nils and Gurevych, Iryna",
-    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing",
-    month = "11",
-    year = "2019",
-    publisher = "Association for Computational Linguistics",
-    url = "http://arxiv.org/abs/1908.10084",
-}
-```
+Have a look at [LaBSE](https://tfhub.dev/google/LaBSE/1) for the respective publication that describes LaBSE.
+
