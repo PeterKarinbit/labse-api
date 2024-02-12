@@ -115,7 +115,7 @@ tags:
 - sentence-transformers
 - feature-extraction
 - sentence-similarity
-- transformers
+library_name: sentence-transformers
 license: apache-2.0
 ---
 
