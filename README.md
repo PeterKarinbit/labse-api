@@ -144,14 +144,6 @@ print(embeddings)
 
 
 
-## Evaluation Results
-
-
-
-For an automated evaluation of this model, see the *Sentence Embeddings Benchmark*: [https://seb.sbert.net](https://seb.sbert.net?model_name=sentence-transformers/LaBSE)
-
-
-
 ## Full Model Architecture
 ```
 SentenceTransformer(
